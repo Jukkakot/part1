@@ -50,7 +50,7 @@ const App = () => {
       <Button onClick={() => setNeutral(neutral + 1)} text = {"neutral"}/>
       <Button onClick={() => setBad(bad + 1)} text = {"bad"}/>
       <Header text = {headerText2}/>
-      <Statistics text = {headerText2} good ={good} neutral = {neutral} bad = {bad}/>
+      <Statistics  good ={good} neutral = {neutral} bad = {bad}/>
     </div>
   )
 }
