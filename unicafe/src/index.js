@@ -56,6 +56,7 @@ const App = (props) => {
 
   const headerText1 = "give feedback"
   const headerText2 = "statistics"
+ 
   return (
     <div>
       <Header text = {headerText1}/>
@@ -66,16 +67,19 @@ const App = (props) => {
       <Statistics  good ={good} neutral = {neutral} bad = {bad}/>
 
 
-      <h1>------------Anekdootit-------------</h1>
+      <h1>------------Anecdotes-------------</h1>
       <Button onClick={() => setSelected(Math.floor(Math.random() * 6))} text = {"Next anecdote"}/>
       <Button onClick={() =>{
         const copy = [...points]
         copy[selected] += 1
         setPoints(copy)
+        
       } } text = {"Vote"}/>
       <p>{props.anecdotes[selected]}</p>
       <p>Has {points[selected]} votes</p>
-      
+      <h1>Anecdote with most votes</h1>
+      <p>{props.anecdotes[points.indexOf(Math.max.apply(0, points))]}</p>
+      <p>Has {points[points.indexOf(Math.max.apply(0, points))]} votes</p>
     </div>
     
   )
